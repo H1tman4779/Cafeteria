@@ -9,7 +9,7 @@ import java.sql.*;
 public class Conexion {
 
     Connection con;
-    String url = "jdbc:mysql://localhost:3306/cafeteria_db";
+    String url = "jdbc:mysql://node156585-env-2916008.jelastic.saveincloud.net:3306/cafeteria_db";
     String user = "root";
     String pass = "MySql";
 
