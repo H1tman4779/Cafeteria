@@ -68,13 +68,16 @@
                                 </div>
                             </div>
                             <br>                            
-                            <div class="form-group">
+                            <div class="form-group d-flex">
                                 <div class="form-group">
-                                    <button type="submit" name="accion" value="Agregar" class="btn btn-outline-info">Agregar Producto</button>                                    
+                                    <button type="submit" name="accion" value="Agregar" class="btn btn-outline-info">Agregar Producto</button>
+                                </div>
+                                <div>
+                                    <input type="text" value="${insuficiente}" style="margin-left: 50px" class="fs-5 fw-bold text-center text-danger-emphasis bg-light-subtle border border-light-subtle">  
                                 </div>
                             </div>
                         </div>                    
-                    </form>
+                    </form>                    
                 </div>
             </div>
             <div class="col-sm-7">

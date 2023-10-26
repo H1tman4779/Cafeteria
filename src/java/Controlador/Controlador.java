@@ -160,29 +160,38 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("fecha", fecha);
                     break;
                 case "Agregar":
-                    request.setAttribute("cl", cl);
-                    total = 0.0;
-                    item = item + 1;
-                    cod = pr.getId_producto();
-                    descripcion = request.getParameter("nombreproducto");
-                    precio = Double.parseDouble(request.getParameter("precio"));
-                    cantidad = Integer.parseInt(request.getParameter("cantidad"));
-                    subtotal = precio * cantidad;
-                    p = new Pedido();
-                    p.setItem(item);
-                    p.setId_producto(cod);
-                    p.setDescripcion_p(descripcion);
-                    p.setPrecio(precio);
-                    p.setCantidad(cantidad);
-                    p.setSubtotal(subtotal);
-                    lista.add(p);
-                    for (int i = 0; i < lista.size(); i++) {
-                        total = total + lista.get(i).getSubtotal();
+                    if (Integer.parseInt(request.getParameter("cantidad")) <= Integer.parseInt(request.getParameter("stock"))) {
+                        request.setAttribute("cl", cl);
+                        total = 0.0;
+                        item = item + 1;
+                        cod = pr.getId_producto();
+                        descripcion = request.getParameter("nombreproducto");
+                        precio = Double.parseDouble(request.getParameter("precio"));
+                        cantidad = Integer.parseInt(request.getParameter("cantidad"));
+                        subtotal = precio * cantidad;
+                        p = new Pedido();
+                        p.setItem(item);
+                        p.setId_producto(cod);
+                        p.setDescripcion_p(descripcion);
+                        p.setPrecio(precio);
+                        p.setCantidad(cantidad);
+                        p.setSubtotal(subtotal);
+                        lista.add(p);
+                        for (int i = 0; i < lista.size(); i++) {
+                            total = total + lista.get(i).getSubtotal();
+                        }
+                        request.setAttribute("totalpagar", total);
+                        request.setAttribute("lista", lista);
+                        request.setAttribute("numerofactura", numeroFactura);
+                        request.setAttribute("fecha", fecha);
+                    } else {
+                        String insuficiente = "Sin Stock";
+                        request.setAttribute("insuficiente", insuficiente);
+                        request.setAttribute("totalpagar", total);
+                        request.setAttribute("lista", lista);
+                        request.setAttribute("numerofactura", numeroFactura);
+                        request.setAttribute("fecha", fecha);
                     }
-                    request.setAttribute("totalpagar", total);
-                    request.setAttribute("lista", lista);
-                    request.setAttribute("numerofactura", numeroFactura);
-                    request.setAttribute("fecha", fecha);
                     break;
                 case "GenerarPedido":
                     //Actualizar Stock
