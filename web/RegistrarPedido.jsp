@@ -38,8 +38,8 @@
                             <div>
                                 <br>
                                 <div class="col-sm-10 d-flex">
-                                    <input type="text" name="apellidocliente" value="${cl.getApellido()}" placeholder="Apellido Cliente" class="form-control" col-sm-6> 
-                                    <input type="text" name="nombrecliente" value="${cl.getNombre()}" placeholder="Nombre Cliente" class="form-control" col-sm-6>
+                                    <input disabled type="text" name="apellidocliente" value="${cl.getApellido()}" placeholder="Apellido Cliente" class="form-control" col-sm-6> 
+                                    <input disabled type="text" name="nombrecliente" value="${cl.getNombre()}" placeholder="Nombre Cliente" class="form-control" col-sm-6>
                                 </div>  
                             </div>
                             <br>
@@ -52,7 +52,7 @@
                                     <button type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-info">Buscar</button>  
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" name="nombreproducto" value="${producto.getProducto()}" placeholder ="Datos Producto" class="form-control" col-sm-6>  
+                                    <input disabled type="text" name="nombreproducto" value="${producto.getProducto()}" placeholder ="Datos Producto" class="form-control" col-sm-6>  
                                 </div> 
                             </div>
                             <br>
@@ -73,7 +73,7 @@
                                     <button type="submit" name="accion" value="Agregar" class="btn btn-outline-info">Agregar Producto</button>
                                 </div>
                                 <div>
-                                    <input type="text" value="${insuficiente}" style="margin-left: 50px" class="fs-5 fw-bold text-center text-danger-emphasis bg-light-subtle border border-light-subtle">  
+                                    <input disabled type="text" value="${insuficiente}" style="margin-left: 50px" class="fs-5 fw-bold text-center text-danger-emphasis bg-light-subtle border border-light-subtle">  
                                 </div>
                             </div>
                         </div>                    
@@ -85,9 +85,9 @@
                     <div class="card-body">
                         <div class="col-sm-3 ml-auto">
                             <label>Factura Nro</label>
-                            <input type="text" name="nrofactura" value="${numerofactura}" class="form-control">
+                            <input disabled type="text" name="nrofactura" value="${numerofactura}" class="form-control">
                             <label>Fecha</label>
-                            <input type="text" name="fecha" value="${fecha}" class="form-control" style="margin-right: 10px">                            
+                            <input disabled type="text" name="fecha" value="${fecha}" class="form-control" style="margin-right: 10px">                            
                         </div>
                         <br>
                         <table class="table table-hover">
